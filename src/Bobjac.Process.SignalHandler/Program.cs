@@ -7,6 +7,13 @@ namespace Bobjac.Process.SignalHandler
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            AppDomain.CurrentDomain.ProcessExit += (s, e) =>
+            {
+                Console.WriteLine("Exiting!");
+            };
+
+            System.Threading.Thread.Sleep(5000);
         }
     }
 }
